@@ -182,22 +182,10 @@ module XADCdemo(
       
       always @(posedge(CLK100MHZ))
       begin
-        case(sw)
-        0:  begin
         Address_in <= 8'h16;
         Vrx <= data[15:12];
-        Vry <= 4'b0;
-        end
-        
-        1: begin
-        Address_in <= 8'h1e;
-        Vry<=data[15:12];
-        Vrx<=4'b0;
-        end
-        endcase
-      
-      
       end
+       
       
       // This is for debugging and testing the values
       DigitToSeg segment1(.in1(dig3),
